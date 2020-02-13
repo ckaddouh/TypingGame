@@ -1,2 +1,1 @@
 # TypingGame
-#Hello everyone.. THis is hackathon 1. I enjoy this minecraft music. classy gamers in the building. annie is dumb. i fell asleep at the opening ceremony that's kinda sad. Im kinda hungry. SHay is sitting with women. Im exctied. TOO excited :)
