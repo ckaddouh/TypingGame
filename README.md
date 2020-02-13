@@ -1,1 +1,3 @@
 # TypingGame
+# dj u suck
+# 
