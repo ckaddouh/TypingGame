@@ -21,7 +21,7 @@ class screen_manager(object):
         self.root.title("Typing Game!")
         self.current_screen = Application(self.root, self.endGame)
     
-    def endGame(self, yummywords.txt, self.exit_button):
+    def endGame(self, "yummywords.txt", self.exit_button):
         self.current_screen.destroy()
         self.root.title("Game Summary")
         self.current_screen = summary(self.root)
