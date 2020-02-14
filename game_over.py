@@ -1,8 +1,8 @@
 from tkinter import *
 
 
-class summary():
-    def __init__(self, master, call_on_next):
+class summary(Frame):
+    def __init__(self, master, points, call_on_next):
         super(summary, self).__init__(master)
         self.call_on_selected = call_on_next
         self.grid()

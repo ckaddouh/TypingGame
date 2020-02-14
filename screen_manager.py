@@ -32,7 +32,7 @@ class screenManager(object):
     def endGame(self):
         self.current_screen.destroy()
         self.root.title("Game Summary")
-        self.current_screen = summary(self.root, self.wordList, self.exit_button)
+        self.current_screen = summary(self.root, self.wordList, self.points, self.exit_button)
     
     def exit_button(self):
         self.current_screen.destroy()
