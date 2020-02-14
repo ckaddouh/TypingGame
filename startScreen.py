@@ -1,12 +1,11 @@
 from tkinter import *
 
 
-
 class Startscreen(Frame):
     def __init__(self, master):
         super(Startscreen, self).__init__(master)
 
-        #self.call_on_selcted = call_on_next
+        self.call_on_selcted = call_on_next
 
         self.grid()
 
@@ -25,12 +24,8 @@ class Startscreen(Frame):
         start_button = Button(self, text="START GAME", font="Courier 16 bold")
         start_button.grid(row=6, column=0, sticky=N)
 
-    #def continue_clicked(self):
-        #self.call_on_selcted()
+    def continue_clicked(self):
+        self.call_on_selcted()
 
-root = Tk()
-root.title("Start Screen")
-app = Startscreen(root)
-root.mainloop()
     
 
