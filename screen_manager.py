@@ -35,6 +35,8 @@ class screen_manager(object):
         self.current_screen.destroy()
 
 def main():
-    typing = screen_manager
-    typing.startScreen
+    typing = screen_manager()
+    typing.start_screen()
     typing.root.mainloop()
+
+main()
