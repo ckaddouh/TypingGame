@@ -3,14 +3,16 @@ from tkinter import *
 import time
 
 # Create a GUI for the word at the top, a timer, and a submission box. 
-class Application():
-    def __init__(self, master, wordList, count, call_on_next):
+class Application(Frame):
+    def __init__(self, master, wordList, call_on_next):
         super(Application, self).__init__(master)
+        self.grid()
+
         self.points = 0
-        self.count = count
+        #self.count = count
         self.call_on_selected = call_on_next
         self.wordList = wordList
-        self.grid()
+
 
         self.create_widgets()
     
