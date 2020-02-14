@@ -22,14 +22,19 @@ class screen_manager(object):
         self.current_screen.destroy()
         self.game()
 
-    def game(self, self.wordList, self.endGame):
+    def game(self):
         self.root.title("Typing Game!")
-        self.current_screen = Application(self.root, self.endGame)
+        self.current_screen = Application(self.root, self.wordList, self.endGame)
     
-    def endGame(self, "yummywords.txt", self.exit_button):
+    def endGame(self):
         self.current_screen.destroy()
         self.root.title("Game Summary")
-        self.current_screen = summary(self.root)
+        self.current_screen = summary(self.root, self.wordList, self.exit_button)
     
     def exit_button(self):
         self.current_screen.destroy()
+
+def main():
+    typing = screen_manager
+    typing.startScreen
+    typing.root.mainloop()
