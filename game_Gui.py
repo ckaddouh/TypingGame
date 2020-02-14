@@ -4,23 +4,17 @@ import time
 
 # Create a GUI for the word at the top, a timer, and a submission box. 
 class Application():
-    def __init__(self, master, wordListFile):
+    def __init__(self, master, wordListFile, count):
         super(Application, self).__init__(master)
         self.wordList = []
         for line in wordListFile:
             self.wordList.append(line.strip())
         self.wordList.shuffle()
         self.points = 0
+        self.count = count
         self.call_on_selected = call_on_next
         self.grid()
         self.create_widgets()
-    
-    def timer(self, counter):
-        count = counter
-        while count > 0:
-            time.sleep(1)
-            count -= 1
-        self.endGame()
     
     def create_widgets(self):
         self.ready = Label(self, text = "READY...")
@@ -41,12 +35,15 @@ class Application():
         self.showPoints.grid(row = 0, column = 5)
 
     def runGame(self):
-        for i in self.wordList:
+        count = self.count
+        while count > 0:
             self.word = Label(self, text= i)
             for x in range(0, 4):
                 self.word.grid(row = x, column = 2)
             self.word.destroy()
             if self.word == self.answer.get():
                 self.points += 1
-
-            
+            time.sleep(1)
+            count -= 1
+        self.endGame()
+        
