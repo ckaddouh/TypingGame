@@ -2,7 +2,7 @@ from tkinter import *
 
 
 class Startscreen(Frame):
-    def __init__(self, master):
+    def __init__(self, master, call_on_next):
         super(Startscreen, self).__init__(master)
 
         self.call_on_selcted = call_on_next
@@ -23,7 +23,6 @@ class Startscreen(Frame):
         self.username.grid(row=5, column=0)
         start_button = Button(self, text="START GAME", font="Courier 16 bold")
         start_button.grid(row=6, column=0, sticky=N)
-
     def continue_clicked(self):
         self.call_on_selcted()
 

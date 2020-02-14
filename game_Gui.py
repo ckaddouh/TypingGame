@@ -4,7 +4,7 @@ import time
 
 # Create a GUI for the word at the top, a timer, and a submission box. 
 class Application():
-    def __init__(self, master, wordListFile, count):
+    def __init__(self, master, wordListFile, call_on_next:
         super(Application, self).__init__(master)
         self.wordList = []
         for line in wordListFile:
@@ -45,5 +45,5 @@ class Application():
                 self.points += 1
             time.sleep(1)
             count -= 1
-        self.endGame()
+        self.call_on_selected()
         
