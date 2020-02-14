@@ -1,14 +1,16 @@
-# self.endGame() should give a summary screen. 
+# self.endGame() should give a summary screen.
+from tkinter import *
+
 from startScreen import Startscreen
 from game_Gui import Application
 from game_over import Application
 
-class screen_manager(object):
+class screenManager(object):
     def __init__(self):
         self.root = Tk()
         self.current_screen = None
         self.wordList = []
-        text_file = open("yummywords.txt", r)
+        text_file = open("yummywords.txt", "r")
         for line in text_file:
             self.wordList.append(line.strip())
         self.wordList.shuffle()
@@ -35,7 +37,7 @@ class screen_manager(object):
         self.current_screen.destroy()
 
 def main():
-    typing = screen_manager()
+    typing = screenManager()
     typing.start_screen()
     typing.root.mainloop()
 
