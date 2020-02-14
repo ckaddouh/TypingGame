@@ -7,7 +7,12 @@ class screen_manager(object):
     def __init__(self):
         self.root = Tk()
         self.current_screen = None
-        
+        self.wordList = []
+        text_file = open("yummywords.txt", r)
+        for line in text_file:
+            self.wordList.append(line.strip())
+        self.wordList.shuffle()
+
     
     def start_screen(self):
         self.root.title("Welcome!")
@@ -17,7 +22,7 @@ class screen_manager(object):
         self.current_screen.destroy()
         self.game()
 
-    def game(self, yummywords.txt, self.endGame):
+    def game(self, self.wordList, self.endGame):
         self.root.title("Typing Game!")
         self.current_screen = Application(self.root, self.endGame)
     

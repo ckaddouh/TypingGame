@@ -4,12 +4,8 @@ import time
 
 # Create a GUI for the word at the top, a timer, and a submission box. 
 class Application():
-    def __init__(self, master, wordListFile, count):
+    def __init__(self, master, wordList, count):
         super(Application, self).__init__(master)
-        self.wordList = []
-        for line in wordListFile:
-            self.wordList.append(line.strip())
-        self.wordList.shuffle()
         self.points = 0
         self.count = count
         self.call_on_selected = call_on_next
