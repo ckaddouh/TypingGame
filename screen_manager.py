@@ -1,9 +1,9 @@
 # self.endGame() should give a summary screen.
 from tkinter import *
-
+import random
 from startScreen import Startscreen
 from game_Gui import Application
-from game_over import Application
+from game_over import summary
 
 class screenManager(object):
     def __init__(self):
@@ -13,7 +13,7 @@ class screenManager(object):
         text_file = open("yummywords.txt", "r")
         for line in text_file:
             self.wordList.append(line.strip())
-        self.wordList.shuffle()
+        random.shuffle(self.wordList)
 
     
     def start_screen(self):

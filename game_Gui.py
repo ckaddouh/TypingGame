@@ -4,12 +4,14 @@ import time
 
 # Create a GUI for the word at the top, a timer, and a submission box. 
 class Application():
-    def __init__(self, master, wordList, count):
+    def __init__(self, master, wordList, count, call_on_next):
         super(Application, self).__init__(master)
         self.points = 0
         self.count = count
         self.call_on_selected = call_on_next
+        self.wordList = wordList
         self.grid()
+
         self.create_widgets()
     
     def create_widgets(self):
@@ -27,13 +29,14 @@ class Application():
         self.go.destroy()
         self.answer = Entry()
         self.answer.grid(row = 5, column = 2)
-        self.showPoints = Label(self, text = "Points: " + self.points)
+        self.showPoints = Label(self, text = "Points: " + str(self.points))
         self.showPoints.grid(row = 0, column = 5)
 
     def runGame(self):
         count = self.count
         while count > 0:
-            self.word = Label(self, text= i)
+            for i in self.wordList:
+                self.word = Label(self, text= self.wordList[i])
             for x in range(0, 4):
                 self.word.grid(row = x, column = 2)
             self.word.destroy()
@@ -41,4 +44,4 @@ class Application():
                 self.points += 1
             time.sleep(1)
             count -= 1
-        self.endGame()
+        self.call_on_selected()

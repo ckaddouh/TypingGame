@@ -5,7 +5,7 @@ class Startscreen(Frame):
     def __init__(self, master, call_on_next):
         super(Startscreen, self).__init__(master)
 
-        self.call_on_selcted = call_on_next
+        self.call_on_selected = call_on_next
 
         self.grid()
 
@@ -21,10 +21,11 @@ class Startscreen(Frame):
         Label(self, text="Username:").grid(row=4, column=0, sticky=N)
         self.username = Entry(self)
         self.username.grid(row=5, column=0)
-        start_button = Button(self, text="START GAME", font="Courier 16 bold")
+        start_button = Button(self, text="START GAME", font="Courier 16 bold", command = self.continue_clicked)
         start_button.grid(row=6, column=0, sticky=N)
+
     def continue_clicked(self):
-        self.call_on_selcted()
+        self.call_on_selected()
 
     
 

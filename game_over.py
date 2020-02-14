@@ -1,9 +1,9 @@
 from tkinter import *
 
 
-class Application():
-    def __init__(self, master, wordListFile, count):
-        super(Application, self).__init__(master)
+class summary():
+    def __init__(self, master, call_on_next):
+        super(summary, self).__init__(master)
         self.call_on_selected = call_on_next
         self.grid()
         self.create_widgets()
