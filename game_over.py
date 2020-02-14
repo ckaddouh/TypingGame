@@ -6,7 +6,7 @@ class Application():
         super(Application, self).__init__(master)
         self.call_on_selected = call_on_next
         self.grid()
-      self.create_widgets()
+        self.create_widgets()
     
     def create_widgets(self):
         Label(self, text = "GAME OVER").grid(row = 0, column = 2)
